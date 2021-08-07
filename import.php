@@ -20,28 +20,16 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 
 // (C) IMPORT  ROW BY ROW
 
-// $stats = array();
-// $count = 0;
+
 // while (($row = fgetcsv($fh,1000,";")) !== false) {
-//     $count++;
-//     array_push($stats, $row[3], $row[4], $row[5], $row[6], $row[7], $row[8], $row[9]);
-//     if ($count == 898){
-//         $arr = array_unique($stats);
-//         print_r(count($arr));
-//         for($i=0; $i<6286; $i++){
-//             $test = array($arr[$i]);
-//             try {
-//             $stmt = $pdo->prepare("INSERT INTO `stats`(`value`) VALUES (?)");
-//             $stmt->execute($test);
-//           } catch (Exception $ex) { echo $ex->getmessage(); }
-//         }
-//     }
-//   }
+//   try {
+   
+//     $stmt = $pdo->prepare("INSERT INTO `csv` (`name`, `type1`, `type2`, `total`, `hp`,`attack`,`defense`, `special_attack`, `special_defense`, `speed`, `image`, `icon`, `generation`, `id`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+//     $stmt->execute([$row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6], $row[7], $row[8], $row[9], $row[10], $row[11], $row[12], $row[13]]);
+//   } catch (Exception $ex) { echo $ex->getmessage(); }
+// }
 // fclose($fh);
-
 // echo "DONE.";
-
-
 
 
 // IMPORT TABLE TYPE
@@ -132,15 +120,7 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
             $result_total = $stmt->fetchAll(PDO::FETCH_NUM);
           } catch (Exception $ex) { echo $ex->getmessage(); }
           
-//URL        
-          
-          try {
-            $stmt = $pdo->prepare("SELECT csv.image, stats.id_stats FROM csv JOIN stats WHERE csv.total = stats.value");
-            $stmt->execute();
-            $result_total = $stmt->fetchAll(PDO::FETCH_NUM);
-          } catch (Exception $ex) { echo $ex->getmessage(); }
-          
-        
+
 
 // HP
 
@@ -205,18 +185,33 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 
 
             try {
-            $stmt = $pdo->prepare("SELECT csv.generation, generations.id_generations FROM csv JOIN generations WHERE csv.generation = generations.generation");
+            $stmt = $pdo->prepare("SELECT csv.generation, generations.id_generations FROM csv JOIN infos WHERE csv.generation = generations.generation");
             $stmt->execute();
             $result_generation = $stmt->fetchAll(PDO::FETCH_NUM);
           } catch (Exception $ex) { echo $ex->getmessage(); }
           // var_dump($result_generation);
 
+// // URL
 
+//             try {
+//             $stmt = $pdo->prepare("SELECT csv.image FROM csv JOIN infos WHERE csv.image = infos.url");
+//             $stmt->execute();
+//             $result_url = $stmt->fetchAll(PDO::FETCH_NUM);
+//           } catch (Exception $ex) { echo $ex->getmessage(); }
+
+
+// // NAME
+
+//             try {
+//             $stmt = $pdo->prepare("SELECT csv.name FROM csv JOIN infos WHERE csv.name = infos.name");
+//             $stmt->execute();
+//             $result_name = $stmt->fetchAll(PDO::FETCH_NUM);
+//           } catch (Exception $ex) { echo $ex->getmessage(); }
 // INSERT 
 
 
-          for($i=0;$i<count($result_generation);$i++){
-            $generations = $result_generation[$i][1];
+          for($i=0;$i<898;$i++){
+            // $generations = $result_generation[$i][1];
             $total = $result_total[$i][1];
             $hp = $result_hp[$i][1];
             $attack = $result_attack[$i][1];
@@ -227,13 +222,17 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
             // var_dump($result_generation);
 
           try{
-              $stmt = $pdo->prepare("INSERT INTO infos (generations_id_generations, total, hp, attack, defense, special_attack, special_defense, speed) VALUES (?,?,?,?,?,?,?,?)");
-              $stmt->execute([$generations, $total, $hp, $attack, $defense, $special_attack, $special_defense, $speed]);
+              $stmt = $pdo->prepare("INSERT INTO infos (total, hp, attack, defense, special_attack, special_defense, speed) VALUES (?,?,?,?,?,?,?)");
+              $stmt->execute([$total, $hp, $attack, $defense, $special_attack, $special_defense, $speed]);
             } catch (Exception $ex) { echo $ex->getmessage(); }
           }
 
 
-        // }
+        
+
+
+
+        
 fclose($fh);
 echo "DONE.";
 
