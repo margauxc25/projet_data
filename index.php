@@ -8,11 +8,11 @@ $router->setBasePath('projet_data/');
 
 
 $router->map('GET', '/', function() {
-require './controller/index_controller.php';
+require './view/index_view.php';
 });
 
 $router->map('GET', '/infos', function() {
-require './controller/infos_controller.php';
+require './view/infos_view.php';
 });
 
 $match = $router->match();
@@ -20,7 +20,7 @@ if($match !== null){
 if (is_callable($match['target'])){
 call_user_func($match['target']);
 } else {
-require './controller/404_controller.php';
+require './view/404_view.php';
 }
 } else {
 echo'error';

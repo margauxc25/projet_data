@@ -24,7 +24,7 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 // while (($row = fgetcsv($fh,1000,";")) !== false) {
 //   try {
    
-//     $stmt = $pdo->prepare("INSERT INTO `csv` (`name`, `type1`, `type2`, `total`, `hp`,`attack`,`defense`, `special_attack`, `special_defense`, `speed`, `image`, `icon`, `generation`, `id`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+//     $stmt = $pdo->prepare("INSERT INTO `csv` (`name`, `type1`, `type2`, `total`, `hp`,`attack`,`defense`, `special_attack`, `special_defense`, `speed`, `image`, `icon`, `id`, `generation`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 //     $stmt->execute([$row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6], $row[7], $row[8], $row[9], $row[10], $row[11], $row[12], $row[13]]);
 //   } catch (Exception $ex) { echo $ex->getmessage(); }
 // }
@@ -111,90 +111,90 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 //   array_push($test, $row[3], $row[4], $row[5], $row[6], $row[7], $row[8], $row[9], $row[13]);
 
 
-// TOTAL
+// // TOTAL
 
 
-            try {
-            $stmt = $pdo->prepare("SELECT csv.total, stats.id_stats FROM csv JOIN stats WHERE csv.total = stats.value");
-            $stmt->execute();
-            $result_total = $stmt->fetchAll(PDO::FETCH_NUM);
-          } catch (Exception $ex) { echo $ex->getmessage(); }
+//             try {
+//             $stmt = $pdo->prepare("SELECT csv.total, stats.id_stats FROM csv JOIN stats WHERE csv.total = stats.value");
+//             $stmt->execute();
+//             $result_total = $stmt->fetchAll(PDO::FETCH_NUM);
+//           } catch (Exception $ex) { echo $ex->getmessage(); }
           
 
 
-// HP
+// // HP
 
-            try {
-            $stmt = $pdo->prepare("SELECT csv.hp, stats.id_stats FROM csv JOIN stats WHERE csv.hp = stats.value");
-            $stmt->execute();
-            $result_hp = $stmt->fetchAll(PDO::FETCH_NUM);
-          } catch (Exception $ex) { echo $ex->getmessage(); }
+//             try {
+//             $stmt = $pdo->prepare("SELECT csv.hp, stats.id_stats FROM csv JOIN stats WHERE csv.hp = stats.value");
+//             $stmt->execute();
+//             $result_hp = $stmt->fetchAll(PDO::FETCH_NUM);
+//           } catch (Exception $ex) { echo $ex->getmessage(); }
         
 
 
-// ATTACK
+// // ATTACK
 
-            try {
-            $stmt = $pdo->prepare("SELECT csv.attack, stats.id_stats FROM csv JOIN stats WHERE csv.attack = stats.value");
-            $stmt->execute();
-            $result_attack = $stmt->fetchAll(PDO::FETCH_NUM);
-          } catch (Exception $ex) { echo $ex->getmessage(); }
-
-
-// DEFENSE
+//             try {
+//             $stmt = $pdo->prepare("SELECT csv.attack, stats.id_stats FROM csv JOIN stats WHERE csv.attack = stats.value");
+//             $stmt->execute();
+//             $result_attack = $stmt->fetchAll(PDO::FETCH_NUM);
+//           } catch (Exception $ex) { echo $ex->getmessage(); }
 
 
-            try {
-            $stmt = $pdo->prepare("SELECT csv.defense, stats.id_stats FROM csv JOIN stats WHERE csv.defense = stats.value");
-            $stmt->execute();
-            $result_defense = $stmt->fetchAll(PDO::FETCH_NUM);
-          } catch (Exception $ex) { echo $ex->getmessage(); }
+// // DEFENSE
 
 
-// SP_ATTACK
-
-            try {
-            $stmt = $pdo->prepare("SELECT csv.special_attack, stats.id_stats FROM csv JOIN stats WHERE csv.special_attack = stats.value");
-            $stmt->execute();
-            $result_special_attack = $stmt->fetchAll(PDO::FETCH_NUM);
-          } catch (Exception $ex) { echo $ex->getmessage(); }
+//             try {
+//             $stmt = $pdo->prepare("SELECT csv.defense, stats.id_stats FROM csv JOIN stats WHERE csv.defense = stats.value");
+//             $stmt->execute();
+//             $result_defense = $stmt->fetchAll(PDO::FETCH_NUM);
+//           } catch (Exception $ex) { echo $ex->getmessage(); }
 
 
-//special_defense
+// // SP_ATTACK
+
+//             try {
+//             $stmt = $pdo->prepare("SELECT csv.special_attack, stats.id_stats FROM csv JOIN stats WHERE csv.special_attack = stats.value");
+//             $stmt->execute();
+//             $result_special_attack = $stmt->fetchAll(PDO::FETCH_NUM);
+//           } catch (Exception $ex) { echo $ex->getmessage(); }
 
 
-            try {
-            $stmt = $pdo->prepare("SELECT csv.special_defense, stats.id_stats FROM csv JOIN stats WHERE csv.special_defense = stats.value");
-            $stmt->execute();
-            $result_special_defense = $stmt->fetchAll(PDO::FETCH_NUM);
-          } catch (Exception $ex) { echo $ex->getmessage(); }
+// //special_defense
+
+
+//             try {
+//             $stmt = $pdo->prepare("SELECT csv.special_defense, stats.id_stats FROM csv JOIN stats WHERE csv.special_defense = stats.value");
+//             $stmt->execute();
+//             $result_special_defense = $stmt->fetchAll(PDO::FETCH_NUM);
+//           } catch (Exception $ex) { echo $ex->getmessage(); }
         
 
 
-//SPEED
+// //SPEED
 
 
-            try {
-            $stmt = $pdo->prepare("SELECT csv.speed, stats.id_stats FROM csv JOIN stats WHERE csv.speed = stats.value");
-            $stmt->execute();
-            $result_speed = $stmt->fetchAll(PDO::FETCH_NUM);
-          } catch (Exception $ex) { echo $ex->getmessage(); }
+//             try {
+//             $stmt = $pdo->prepare("SELECT csv.speed, stats.id_stats FROM csv JOIN stats WHERE csv.speed = stats.value");
+//             $stmt->execute();
+//             $result_speed = $stmt->fetchAll(PDO::FETCH_NUM);
+//           } catch (Exception $ex) { echo $ex->getmessage(); }
 
 
-// GENERATIONS
+// // GENERATIONS
 
 
-            try {
-            $stmt = $pdo->prepare("SELECT csv.generation, generations.id_generations FROM csv JOIN infos WHERE csv.generation = generations.generation");
-            $stmt->execute();
-            $result_generation = $stmt->fetchAll(PDO::FETCH_NUM);
-          } catch (Exception $ex) { echo $ex->getmessage(); }
-          // var_dump($result_generation);
+//             try {
+//             $stmt = $pdo->prepare("SELECT csv.generation, generations.id_generations FROM csv JOIN generations WHERE csv.generation = generations.generation");
+//             $stmt->execute();
+//             $result_generation = $stmt->fetchAll(PDO::FETCH_NUM);
+//           } catch (Exception $ex) { echo $ex->getmessage(); }
+//           // var_dump($result_generation);
 
 // // URL
 
 //             try {
-//             $stmt = $pdo->prepare("SELECT csv.image FROM csv JOIN infos WHERE csv.image = infos.url");
+//             $stmt = $pdo->prepare("SELECT csv.image FROM csv");
 //             $stmt->execute();
 //             $result_url = $stmt->fetchAll(PDO::FETCH_NUM);
 //           } catch (Exception $ex) { echo $ex->getmessage(); }
@@ -203,38 +203,47 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 // // NAME
 
 //             try {
-//             $stmt = $pdo->prepare("SELECT csv.name FROM csv JOIN infos WHERE csv.name = infos.name");
+//             $stmt = $pdo->prepare("SELECT csv.name FROM csv");
 //             $stmt->execute();
 //             $result_name = $stmt->fetchAll(PDO::FETCH_NUM);
 //           } catch (Exception $ex) { echo $ex->getmessage(); }
-// INSERT 
+//                     // var_dump($result_name[1][0]);
+
+// // INSERT 
 
 
-          for($i=0;$i<898;$i++){
-            // $generations = $result_generation[$i][1];
-            $total = $result_total[$i][1];
-            $hp = $result_hp[$i][1];
-            $attack = $result_attack[$i][1];
-            $defense = $result_defense[$i][1];
-            $special_attack = $result_special_attack[$i][1];
-            $special_defense = $result_special_defense[$i][1];
-            $speed = $result_speed[$i][1];
-            // var_dump($result_generation);
+//           for($i=0;$i<898;$i++){
+//             $name = $result_name[$i][0];
+//             $url = $result_url[$i][0];
+//             $generations = $result_generation[$i][1];
+//             $total = $result_total[$i][1];
+//             $hp = $result_hp[$i][1];
+//             $attack = $result_attack[$i][1];
+//             $defense = $result_defense[$i][1];
+//             $special_attack = $result_special_attack[$i][1];
+//             $special_defense = $result_special_defense[$i][1];
+//             $speed = $result_speed[$i][1];
+//             // var_dump($result_generation);
 
-          try{
-              $stmt = $pdo->prepare("INSERT INTO infos (total, hp, attack, defense, special_attack, special_defense, speed) VALUES (?,?,?,?,?,?,?)");
-              $stmt->execute([$total, $hp, $attack, $defense, $special_attack, $special_defense, $speed]);
-            } catch (Exception $ex) { echo $ex->getmessage(); }
-          }
+//           try{
+//               $stmt = $pdo->prepare("INSERT INTO infos (name, url, generations_id_generations, total, hp, attack, defense, special_attack, special_defense, speed) VALUES (?,?,?,?,?,?,?,?,?,?)");
+//               $stmt->execute([$name, $url, $generations, $total, $hp, $attack, $defense, $special_attack, $special_defense, $speed]);
+//             } catch (Exception $ex) { echo $ex->getmessage(); }
+//           }
 
 
         
-
-
-
         
-fclose($fh);
-echo "DONE.";
+// fclose($fh);
+// echo "DONE.";
+
+
+
+
+
+// IMPORT TABLE TYPES_HAS_INFOS
+
+
 
 
 
