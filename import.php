@@ -14,11 +14,10 @@ try {
  
 // (B) READ UPLOADED CSV
 
-
 $fh = fopen("pokemon_datanewnew.csv", "r");
 if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 
-// (C) IMPORT  ROW BY ROW
+// (C) IMPORT CSV ROW BY ROW
 
 
 // while (($row = fgetcsv($fh,1000,";")) !== false) {
@@ -57,6 +56,7 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 // fclose($fh);
 // echo "DONE.";
 
+
 // IMPORT TABLE GENERATIONS
 
 
@@ -81,21 +81,6 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 // echo "DONE.";
 
 
-// TEST IMPORT NAME & IMAGE/URL
-
-// while (($row = fgetcsv($fh,1000,";")) !== false) {
-
-//             try {
-//             $stmt = $pdo->prepare("INSERT INTO `infos`(`name`, `url`) VALUES (?,?)");
-//             $stmt->execute([$row[0], $row[10]]);
-//           } catch (Exception $ex) { echo $ex->getmessage(); }
-        
-//         }
-
-
-// fclose($fh);
-// echo "DONE.";
-
 
 
 
@@ -105,10 +90,6 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 // IMPORT TABLE INFOS
 
 
-// TEST
-// while (($row = fgetcsv($fh,1000,";")) !== false) {
-//   $test = [];
-//   array_push($test, $row[3], $row[4], $row[5], $row[6], $row[7], $row[8], $row[9], $row[13]);
 
 
 // // TOTAL
@@ -184,12 +165,12 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 // // GENERATIONS
 
 
-//             try {
-//             $stmt = $pdo->prepare("SELECT csv.generation, generations.id_generations FROM csv JOIN generations WHERE csv.generation = generations.generation");
-//             $stmt->execute();
-//             $result_generation = $stmt->fetchAll(PDO::FETCH_NUM);
-//           } catch (Exception $ex) { echo $ex->getmessage(); }
-//           // var_dump($result_generation);
+          //   try {
+          //   $stmt = $pdo->prepare("SELECT csv.generation, generations.id_generations FROM csv JOIN generations WHERE csv.generation = generations.generation");
+          //   $stmt->execute();
+          //   $result_generation = $stmt->fetchAll(PDO::FETCH_NUM);
+          // } catch (Exception $ex) { echo $ex->getmessage(); }
+          // var_dump($result_generation);
 
 // // URL
 
@@ -202,12 +183,12 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 
 // // NAME
 
-//             try {
-//             $stmt = $pdo->prepare("SELECT csv.name FROM csv");
-//             $stmt->execute();
-//             $result_name = $stmt->fetchAll(PDO::FETCH_NUM);
-//           } catch (Exception $ex) { echo $ex->getmessage(); }
-//                     // var_dump($result_name[1][0]);
+          //   try {
+          //   $stmt = $pdo->prepare("SELECT csv.name FROM csv");
+          //   $stmt->execute();
+          //   $result_name = $stmt->fetchAll(PDO::FETCH_NUM);
+          // } catch (Exception $ex) { echo $ex->getmessage(); }
+          //           var_dump($result_name[1][0]);
 
 // // INSERT 
 
@@ -244,8 +225,25 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 // IMPORT TABLE TYPES_HAS_INFOS
 
 
+          try {
+            $stmt = $pdo->prepare("SELECT csv.id, types.id_type FROM csv JOIN types WHERE csv.type1 = types.type UNION SELECT csv.id, types.id_type FROM csv JOIN types WHERE csv.type2 = types.type");
+            $stmt->execute();
+            $result_types_has_infos = $stmt->fetchAll(PDO::FETCH_NUM);
+          } catch (Exception $ex) { echo $ex->getmessage(); }
+          // var_dump($result_types_has_infos);
 
 
+            
+ for($i=0;$i<1342;$i++){
+            $types_has_infos1 = $result_types_has_infos[$i][0];
+            $types_has_infos2 = $result_types_has_infos[$i][1];
+          try{
+              $stmt = $pdo->prepare("INSERT INTO types_has_infos (types_id_type, infos_id_pokemon) VALUES (?,?)");
+              $stmt->execute([$types_has_infos2, $types_has_infos1]);
+            } catch (Exception $ex) { echo $ex->getmessage(); }
+          }
+fclose($fh);
+echo "DONE.";
 
 
 ?>
