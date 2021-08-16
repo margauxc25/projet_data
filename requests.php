@@ -34,3 +34,7 @@ $index_card = $pdo->prepare(
 
 
 
+
+// INFOS POKEMON
+
+
