@@ -95,7 +95,7 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 //     if ($count == 898){
 //         $arr = array_unique($stats);
 //         // print_r(count($arr));
-//         for($i=0; $i<count($arr); $i++){
+//         for($i=0; $i<6286; $i++){
 //             $test = array($arr[$i]);
 //             try {
 //             $stmt = $pdo->prepare("INSERT INTO `stats`(`value`) VALUES (?)");
@@ -269,4 +269,8 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 // echo "DONE.";
 
 
+
+   
 ?>
+
+
