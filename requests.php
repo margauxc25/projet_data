@@ -5,7 +5,7 @@ $dbHost = 'localhost';
 $dbName = 'mydb';
 $dbChar = 'utf8';
 $dbUser = 'root';
-$dbPass = 'MDP';
+$dbPass = 'Wormhole.9';
 try {
   $pdo = new PDO(
     "mysql:host=".$dbHost.";dbname=".$dbName.";charset=".$dbChar,
@@ -18,12 +18,12 @@ try {
 // INDEX REQUEST, ALL POKEMONS WITH ID NAME & URL
 
 
-$index_card = $pdo->prepare(
-    "SELECT infos.id_pokemon, infos.name, infos.url FROM infos"
-);
-$index_card->execute();
-$all = $index_card->fetchAll();
-print_r($all);
+// $index_card = $pdo->prepare(
+//     "SELECT infos.id_pokemon, infos.name, infos.url FROM infos"
+// );
+// $index_card->execute();
+// $all = $index_card->fetchAll();
+// print_r($all);
 
 // INDEX REQUEST BY TYPE
 
@@ -39,7 +39,7 @@ print_r($all);
 
 // INDEX REQUEST BY GENERATIONS
 
-// SELECT infos.id_pokemon, infos.name, infos.url//, generations.generation
+// SELECT infos.id_pokemon, infos.name, infos.url
 // FROM infos
 // JOIN generations
 // ON infos.generations_id_generations = generations.id_generations
@@ -95,80 +95,26 @@ print_r($all);
 
 // PUTAIN DE REQUETE
 
-// SELECT infos.id_pokemon, infos.name, infos.url, types.type, generations.generation, total.total, hp.hp, attack.attack, defense.defense, special_attack.special_attack, special_defense.special_defense, speed.speed
-// FROM infos
-// JOIN types_has_infos
-// ON types_has_infos.infos_id_pokemon = infos.id_pokemon
-// JOIN types
-// ON types_has_infos.types_id_type = types.id_type
-// JOIN generations
-// ON infos.generations_id_generations = generations.id_generations
-// JOIN total
-// ON total.id_pokemon = infos.id_pokemon
-// JOIN hp
-// ON hp.id_pokemon = infos.id_pokemon
-// JOIN attack
-// ON attack.id_pokemon = infos.id_pokemon
-// JOIN defense
-// ON defense.id_pokemon = infos.id_pokemon
-// JOIN special_attack
-// ON special_attack.id_pokemon = infos.id_pokemon
-// JOIN special_defense
-// ON special_defense.id_pokemon = infos.id_pokemon
-// JOIN speed
-// ON speed.id_pokemon = infos.id_pokemon
-// WHERE infos.id_pokemon = 897
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// TEEEEEEEEEEEEEEEEEEEEEEST
-
-
-// SELECT infos.id_pokemon, infos.name, infos.url, types.type, generations.generation, infos.total, infos.hp, infos.attack, infos.defense, infos.special_attack, infos.special_defense, infos.speed
-// FROM infos
-// JOIN types_has_infos
-// ON types_has_infos.infos_id_pokemon = infos.id_pokemon
-// JOIN types
-// ON types_has_infos.types_id_type = types.id_type
-// JOIN generations
-// ON infos.generations_id_generations = generations.id_generations
-// JOIN stats
-// ON
-// WHERE infos.id_pokemon = 151
-
-
-
-
-
-// TEST 
-
-// SELECT stats.value AS hp, stats.value AS total
-// FROM stats
-// INNER JOIN infos
-// ON infos.hp = stats.id_stats
-// WHERE infos.id_pokemon = 151
-
-
-
-// SELECT infos.id_pokemon, infos.name, infos.url, stats.value
-// FROM infos
-// JOIN stats
-// ON stats.id_stats = infos.total
-// WHERE infos.id_pokemon = 151
+SELECT infos.id_pokemon, infos.name, infos.url, types.type, generations.generation, total.total, hp.hp, attack.attack, defense.defense, special_attack.special_attack, special_defense.special_defense, speed.speed
+FROM infos
+JOIN types_has_infos
+ON types_has_infos.infos_id_pokemon = infos.id_pokemon
+JOIN types
+ON types_has_infos.types_id_type = types.id_type
+JOIN generations
+ON infos.generations_id_generations = generations.id_generations
+JOIN total
+ON total.id_pokemon = infos.id_pokemon
+JOIN hp
+ON hp.id_pokemon = infos.id_pokemon
+JOIN attack
+ON attack.id_pokemon = infos.id_pokemon
+JOIN defense
+ON defense.id_pokemon = infos.id_pokemon
+JOIN special_attack
+ON special_attack.id_pokemon = infos.id_pokemon
+JOIN special_defense
+ON special_defense.id_pokemon = infos.id_pokemon
+JOIN speed
+ON speed.id_pokemon = infos.id_pokemon
+WHERE infos.id_pokemon = 445
