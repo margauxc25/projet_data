@@ -1,6 +1,3 @@
-
-
-
 <?php
 // (A) CONNECT TO DATABASE - CHANGE SETTINGS TO YOUR OWN!
 $dbHost = 'localhost';

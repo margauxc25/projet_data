@@ -1,7 +1,8 @@
 <?php
 
-require('access.php');
-$infos_pokemon = $pdo->prepare(
+require('./model/access.php');
+
+$infos_pokemon = $mydb->prepare(
     "SELECT infos.id_pokemon, infos.name, infos.url, types.type, generations.generation, total.total, hp.hp, attack.attack, defense.defense, special_attack.special_attack, special_defense.special_defense, speed.speed
 FROM infos
 JOIN types_has_infos
@@ -27,8 +28,9 @@ ON speed.id_pokemon = infos.id_pokemon
 WHERE infos.id_pokemon = 445"
 );
 $infos_pokemon->execute();
-$infos = $index_card->fetchAll();
-print_r($infos);
+$result_infos = $infos_pokemon->fetchAll();
+
+// print_r($infos);
 if (count($result_infos) == 2){
         $array1 = $result_infos[0];
         $array2 = $result_infos[1][3];
