@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="../view/index.php" class="backtohome"> ← Go back to the pokedex</a>
+    <main>
+        <h2>{{pokemon.name}}</h2>
+        <article>
+
+            <img src="../assets/images/pokeball.svg" alt="">
+            <div>
+                <ul>
+                    <li>Generation : {{pokemon.generation}}</li>
+                    <li>{{pokemon.type1}}</li>
+                </ul>
+                <ul>
+                    <li>{{pokemon.number}}</li>
+                    <li>{{pokemon.type2}}</li>
+                </ul>
+
+            </div>
+        </article>
+        <aside>
+            <h4>Stats</h4>
+            <div>
+                <p>PV : {{pokemon.pv}}</p>
+                <p>ATTACK : {{pokemon.attack}}</p>
+                <p>DEFENSE : {{pokemon.defense}}</p>
+                <p>SP.DEF : {{pokemon.spdefense1}}</p>
+                <p>SP.DEF : {{pokemon.spdefense2}}</p>
+                <p>SPEED : {{pokemon.speed}}</p>
+            </div>
+            <p>Total : --</p>
+        </aside>
+    </main>
+</body>
+</html>
