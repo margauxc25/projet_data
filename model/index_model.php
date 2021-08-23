@@ -1,6 +1,6 @@
 <?php
 
-require('./model/access.php');
+
 
 $index_card = $mydb->prepare(
     "SELECT infos.id_pokemon, infos.name, infos.url FROM infos"

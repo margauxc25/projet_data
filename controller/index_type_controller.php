@@ -1,18 +1,15 @@
 <?php
 
+require ('../model/access.php');
 
-require ('./model/index_type_model.php');
-
-if(isset($_POST['value']) AND !empty($_POST['value'])){
-    echo JSON_encode(type($_POST['value'], $mydb));
+$type = "";
+if(isset($_POST['type']) AND !empty($_POST['type'])){
+    $type = $_POST['type'];
 }
-else {
-    echo "error";
-}
-require ('./view/index_type_view.php');
+
+require ('../model/index_type_model.php');
+foreach ($result_type as $type) {
+require ('../view/index_type_view.php');
+} 
 
 
-
-// into form method post 
-// inside 
-// button with same class and value qqui sera la variable que je met dans la requete

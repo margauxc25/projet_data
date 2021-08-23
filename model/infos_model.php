@@ -1,6 +1,7 @@
 <?php
 
 require('./model/access.php');
+        // $array1 = array();
 
 function infos($infos, $mydb){
     $infos_pokemon = $mydb->prepare(

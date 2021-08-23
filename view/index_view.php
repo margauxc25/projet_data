@@ -30,13 +30,26 @@
 
 
 
-  <article></article>
+  <article class="section_ajax">
+<?php foreach ($all as $pokemon): ?>
+<div class="pokemon_card">
+  <img class="card_img" src="<?php echo $pokemon[2]?>" alt="image du pokemon">
+  <p class="card_p"><?php echo $pokemon[1]?></p>
+
+
+</div>
+
+<?php endforeach; ?>
+  </article>
 
   <a href="#tothetop"><img src="./assets/image/arrowtothetop.svg" class="buttontothetop" alt=""></a>
 
   <?php echo $twig->render('./footer.twig') ?>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="./assets/js/menuGeneration.js"></script>
   <script src="./assets/js/menuTypes.js"></script>
+<script src="./assets/js/req_gen.js"></script>
+<script src="./assets/js/req_type.js"></script>
 </body>
 
 </html>

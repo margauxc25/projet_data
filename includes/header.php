@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-       <a href="../vue/index.php"><img src="../assets/images/logo.svg" alt="Logo pokedata"></a> 
+       <a href="../vue/index.php"><img class="header_img" src="../assets/images/logo.svg" alt="Logo pokedata"></a> 
     <input class="search" name="search_text" id="search_text" placeholder="Search..." autocomplete="off"/>
     </header>
 </body>
