@@ -11,6 +11,10 @@ $router->map('GET', '/', function() {
 require './controller/index_controller.php';
 });
 
+$router->map('GET', '/search', function() {
+require './controller/search_controller.php';
+});
+
 $router->map('GET', '/generation', function() {
 require './controller/index_generation_controller.php';
 });

@@ -2,7 +2,8 @@
 
 require('./model/access.php');
 
-$infos_pokemon = $mydb->prepare(
+function infos($infos, $mydb){
+    $infos_pokemon = $mydb->prepare(
     "SELECT infos.id_pokemon, infos.name, infos.url, types.type, generations.generation, total.total, hp.hp, attack.attack, defense.defense, special_attack.special_attack, special_defense.special_defense, speed.speed
 FROM infos
 JOIN types_has_infos
@@ -25,8 +26,7 @@ JOIN special_defense
 ON special_defense.id_pokemon = infos.id_pokemon
 JOIN speed
 ON speed.id_pokemon = infos.id_pokemon
-WHERE infos.id_pokemon = 445"
-);
+WHERE infos.id_pokemon = '".$infos."'");
 $infos_pokemon->execute();
 $result_infos = $infos_pokemon->fetchAll();
 
@@ -36,7 +36,10 @@ if (count($result_infos) == 2){
         $array2 = $result_infos[1][3];
         array_push($array1, $array2);
     }
-    return $array1;
+}
+return $array1;
+
+
 
 ?>
 

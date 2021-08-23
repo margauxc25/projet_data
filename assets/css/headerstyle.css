@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height: 9vh;
+    background-color: #0E1320;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img{
+    margin-left: 0.8rem;
+    height: 3rem;
+}
+
+input{
+    height: 1.5rem;
+    width: 9rem;
+    margin-right: 1rem ;
+    padding-left: 0.5rem;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    img{
+        margin-left: 2rem;
+        height: 3rem;
+    }
+
+    input{
+        height: 2rem;
+        width: 35rem;
+        margin-right: 8rem ;
+        padding-left: 0.5rem;
+    }
+}
