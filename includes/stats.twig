@@ -12,15 +12,15 @@
         <h2>{{pokemon.name}}</h2>
         <article>
 
-            <img src="../assets/images/pokeball.svg" alt="">
+            <img src="{{pokemon.url}}" alt="">
             <div>
                 <ul>
                     <li>Generation : {{pokemon.generation}}</li>
-                    <li>{{pokemon.type1}}</li>
+                    <li>{{pokemon.type}}</li>
                 </ul>
                 <ul>
-                    <li>{{pokemon.number}}</li>
-                    <li>{{pokemon.type2}}</li>
+                    <li>{{pokemon.id_pokemon}}</li>
+                    <li>{{pokemon[12]}}</li>
                 </ul>
 
             </div>
@@ -28,14 +28,14 @@
         <aside>
             <h4>Stats</h4>
             <div>
-                <p>PV : {{pokemon.pv}}</p>
+                <p>PV : {{pokemon.hp}}</p>
                 <p>ATTACK : {{pokemon.attack}}</p>
                 <p>DEFENSE : {{pokemon.defense}}</p>
-                <p>SP.DEF : {{pokemon.spdefense1}}</p>
-                <p>SP.DEF : {{pokemon.spdefense2}}</p>
+                <p>SP.ATK : {{pokemon.special_attack}}</p>
+                <p>SP.DEF : {{pokemon.special_defense}}</p>
                 <p>SPEED : {{pokemon.speed}}</p>
             </div>
-            <p>Total : --</p>
+            <p>Total : {{pokemon.total}}</p>
         </aside>
     </main>
 </body>

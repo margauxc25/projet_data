@@ -39,7 +39,9 @@ if (count($result_infos) == 2){
     }
 
 return $array1 ;
+
 }
+
 
 
 ?>

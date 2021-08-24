@@ -47,4 +47,4 @@ WHERE infos.id_pokemon = 1");
         $array2 = $result_infos[1][3];
         array_push($array1, $array2);
     }
-    print_r $array1;
+    print_r($array1);

@@ -23,7 +23,7 @@ $router->map('GET', '/type', function() {
 require './controller/index_type_controller.php';
 });
 
-$router->map('GET', '/infos', function() {
+$router->map('POST', '/infos', function() {
 require './controller/infos_controller.php';
 });
 
