@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +9,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/mentionslegalesstyles.css">
+    <link rel="stylesheet" href="./assets/css/footerstyle.css">
+    <link rel="stylesheet" href="./assets/css/headerstyle.css">
     <title>Pokedata</title>
 </head>
 <body class="container">
 <header>
-    <?php include ('./includes/header.php');?>  
+<?php
+    require './vendor/autoload.php';
+
+    $loader = new \Twig\Loader\FilesystemLoader('includes');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]); ?>
+    <?php
+    echo $twig->render('./header.twig') ?>  
 </header>
+<a href="/projet_data" class="backtohome"> ← Go back to the pokedex</a>
 <main >
 <h2>Mentions légales</h2>
 <div>
@@ -32,7 +47,7 @@
 </div>
 </main>
 
-    <?php include ('./includes/footer.php');?>  
+<?php echo $twig->render('./footer.twig') ?> 
 
 </body>
 </html>

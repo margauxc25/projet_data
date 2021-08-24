@@ -29,3 +29,11 @@ main div{
     margin: 3rem 1rem;
 
 }
+
+input{
+    display: none;
+}
+
+.backtohome{
+    color: black;
+}

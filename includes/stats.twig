@@ -7,27 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="../view/index.php" class="backtohome"> ← Go back to the pokedex</a>
+    <a href="/projet_data" class="backtohome"> ← Go back to the pokedex</a>
     <main>
-        <h2>{{pokemon.name}}</h2>
+        
         <article>
-
-            <img src="{{pokemon.url}}" alt="">
+        <h2>{{pokemon.name}}</h2>
+            
             <div>
                 <ul>
-                    <li>Generation : {{pokemon.generation}}</li>
+                    <li>Gen {{pokemon.generation}}</li>
+                    <li>#{{pokemon.id_pokemon}}</li>
                     <li>{{pokemon.type}}</li>
-                </ul>
-                <ul>
-                    <li>{{pokemon.id_pokemon}}</li>
                     <li>{{pokemon[12]}}</li>
                 </ul>
 
             </div>
+            <img src="{{pokemon.url}}" alt="">
         </article>
         <aside>
             <h4>Stats</h4>
-            <div>
+            <div class="stats">
                 <p>PV : {{pokemon.hp}}</p>
                 <p>ATTACK : {{pokemon.attack}}</p>
                 <p>DEFENSE : {{pokemon.defense}}</p>

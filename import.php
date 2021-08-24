@@ -3,8 +3,8 @@
 $dbHost = 'localhost';
 $dbName = 'mydb';
 $dbChar = 'utf8';
-$dbUser = 'root';
-$dbPass = 'MDP';
+$dbUser = 'margauxcoppi';
+$dbPass = '@Marslab2506';
 try {
   $pdo = new PDO(
     "mysql:host=".$dbHost.";dbname=".$dbName.";charset=".$dbChar,
@@ -27,11 +27,11 @@ if ($fh === false) { exit("Failed to open uploaded CSV file"); }
 //     $stmt->execute([$row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6], $row[7], $row[8], $row[9], $row[10], $row[11], $row[12], $row[13]]);
 //   } catch (Exception $ex) { echo $ex->getmessage(); }
 // }
-fclose($fh);
+// fclose($fh);
 
 
 
-echo "DONE.";
+// echo "DONE.";
 
 
 // IMPORT TABLE TYPE
@@ -308,27 +308,27 @@ echo "DONE.";
 
 // SPECIAL_ATTACK
 
-// CREATE VIEW special_attack AS
-// SELECT infos.id_pokemon, stats.value AS special_attack
-// FROM infos
-// JOIN stats
-// ON stats.id_stats = infos.special_attack
+CREATE VIEW special_attack AS
+SELECT infos.id_pokemon, stats.value AS special_attack
+FROM infos
+JOIN stats
+ON stats.id_stats = infos.special_attack
 
 // SPECIAL_DEFENSE
 
-// CREATE VIEW special_defense AS
-// SELECT infos.id_pokemon, stats.value AS special_defense
-// FROM infos
-// JOIN stats
-// ON stats.id_stats = infos.special_defense
+CREATE VIEW special_defense AS
+SELECT infos.id_pokemon, stats.value AS special_defense
+FROM infos
+JOIN stats
+ON stats.id_stats = infos.special_defense
 
 // SPEED
 
-// CREATE VIEW speed AS
-// SELECT infos.id_pokemon, stats.value AS speed
-// FROM infos
-// JOIN stats
-// ON stats.id_stats = infos.speed
+CREATE VIEW speed AS
+SELECT infos.id_pokemon, stats.value AS speed
+FROM infos
+JOIN stats
+ON stats.id_stats = infos.speed
    
 ?>
 
