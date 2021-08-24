@@ -268,8 +268,67 @@ echo "DONE.";
 // fclose($fh);
 // echo "DONE.";
 
+//VIEWS
+
+// CREATE VIEWS
+
+// TOTAL
+
+// CREATE VIEW total AS
+// SELECT infos.id_pokemon, stats.value AS total
+// FROM infos
+// JOIN stats
+// ON stats.id_stats = infos.total
+
+// HP
+
+// CREATE VIEW hp AS
+// SELECT infos.id_pokemon, stats.value AS hp
+// FROM infos
+// JOIN stats
+// ON stats.id_stats = infos.hp
+
+// ATTACK
+
+// CREATE VIEW attack AS
+// SELECT infos.id_pokemon, stats.value AS attack
+// FROM infos
+// JOIN stats
+// ON stats.id_stats = infos.attack
 
 
+// DEFENSE
+
+// CREATE VIEW defense AS
+// SELECT infos.id_pokemon, stats.value AS defense
+// FROM infos
+// JOIN stats
+// ON stats.id_stats = infos.defense
+
+
+// SPECIAL_ATTACK
+
+// CREATE VIEW special_attack AS
+// SELECT infos.id_pokemon, stats.value AS special_attack
+// FROM infos
+// JOIN stats
+// ON stats.id_stats = infos.special_attack
+
+// SPECIAL_DEFENSE
+
+// CREATE VIEW special_defense AS
+// SELECT infos.id_pokemon, stats.value AS special_defense
+// FROM infos
+// JOIN stats
+// ON stats.id_stats = infos.special_defense
+
+// SPEED
+
+// CREATE VIEW speed AS
+// SELECT infos.id_pokemon, stats.value AS speed
+// FROM infos
+// JOIN stats
+// ON stats.id_stats = infos.speed
    
 ?>
 
