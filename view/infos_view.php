@@ -28,6 +28,11 @@
     <?php echo $twig->render('./stats.twig', ['pokemon'=>infos($id, $mydb)])?>
     
     <?php echo $twig->render('./footer.twig') ?>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="./assets/js/searchbar.js"></script>
+
+
+
 </body>
 
 </html>
