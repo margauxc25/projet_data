@@ -47,6 +47,7 @@
   <script src="./assets/js/menuTypes.js"></script>
 <script src="./assets/js/req_gen.js"></script>
 <script src="./assets/js/req_type.js"></script>
+<script src="./assets/js/searchbar.js"></script>
 </body>
 
 </html>
