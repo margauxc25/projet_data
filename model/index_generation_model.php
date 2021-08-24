@@ -7,9 +7,3 @@ ON infos.generations_id_generations = generations.id_generations
     WHERE infos.generations_id_generations = ?");
     $req_gen->execute([$generation]);
     $result_gen = $req_gen->fetchAll();
-
-
-
-
-
-// return $result_gen;

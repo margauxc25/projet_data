@@ -1,22 +1,16 @@
 <?php
-// (A) CONNECT TO DATABASE - CHANGE SETTINGS TO YOUR OWN!
-$dbHost = 'localhost';
-$dbName = 'mydb';
-$dbChar = 'utf8';
-$dbUser = 'root';
-$dbPass = 'Wormhole.9';
-try {
-  $pdo = new PDO(
-    "mysql:host=".$dbHost.";dbname=".$dbName.";charset=".$dbChar,
-    $dbUser, $dbPass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-  );
-} catch (Exception $ex) { exit($ex->getMessage()); }
- 
-// (B) READ UPLOADED CSV
 
-$fh = fopen("pokemon_datanewnew.csv", "r");
-if ($fh === false) { exit("Failed to open uploaded CSV file"); }
-          
+try
+{
+$pdo = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'root', 'Wormhole.9');
+}
+catch (Exception $e)
+{
+die('Erreur : ' . $e->getMessage());
+}
+
+
+ 
 
 
 
@@ -47,10 +41,10 @@ WHERE infos.id_pokemon = 1");
             $stmt->execute();
             $result_infos = $stmt->fetchAll(PDO::FETCH_NUM);
           } catch (Exception $ex) { echo $ex->getmessage(); }
-        //   print_r(count($result_infos));
+          // print_r(count($result_infos));
         if (count($result_infos) == 2){
         $array1 = $result_infos[0];
         $array2 = $result_infos[1][3];
         array_push($array1, $array2);
     }
-    return $array1;
+    print_r $array1;

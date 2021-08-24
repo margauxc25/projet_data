@@ -27,6 +27,7 @@ $router->map('GET', '/infos', function() {
 require './controller/infos_controller.php';
 });
 
+
 $router->map('GET', '/[*]', function() {
 require './controller/404_controller.php';
 });

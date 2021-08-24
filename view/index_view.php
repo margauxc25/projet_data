@@ -32,13 +32,10 @@
 
   <article class="section_ajax">
 <?php foreach ($all as $pokemon): ?>
-<div class="pokemon_card">
-  <img class="card_img" src="<?php echo $pokemon[2]?>" alt="image du pokemon">
-  <p class="card_p"><?php echo $pokemon[1]?></p>
-
-
-</div>
-
+<form class="pokemon_card"  action="infos"  method="post">
+  <img class="card_img"  src="<?php echo $pokemon[2]?>" alt="image du pokemon">
+  <button type="submit" name="id" value="<?php echo $pokemon[0]?>" class="card_p"><?php echo $pokemon[1]?></button>
+</form>
 <?php endforeach; ?>
   </article>
 
