@@ -3,7 +3,7 @@
 
 
 $index_card = $mydb->prepare(
-    "SELECT infos.id_pokemon, infos.name, infos.url FROM infos LIMIT 10"
+    "SELECT infos.id_pokemon, infos.name, infos.url FROM infos"
 );
 $index_card->execute();
 $all = $index_card->fetchAll();
