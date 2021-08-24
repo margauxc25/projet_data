@@ -9,7 +9,15 @@
 </head>
 <body class="container">
 <header>
-    <?php include ('./includes/header.php');?>  
+<?php
+    require './vendor/autoload.php';
+
+    $loader = new \Twig\Loader\FilesystemLoader('includes');
+    $twig = new \Twig\Environment($loader, [
+        'cache' => false,
+    ]); ?>
+    <?php
+    echo $twig->render('./header.twig') ?> 
 </header>
 <main >
 <h2>Mentions légales</h2>
@@ -30,7 +38,7 @@
 </div>
 </main>
 
-    <?php include ('./includes/footer.php');?>  
+<?php echo $twig->render('./footer.twig') ?>  
 
 </body>
 </html>

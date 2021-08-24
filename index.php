@@ -37,5 +37,5 @@ if (is_callable($match['target'])){
 call_user_func($match['target']);
 } 
 } else {
-echo'error';
+echo 'error';
 }

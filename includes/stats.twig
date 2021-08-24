@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/statsstyle.css">
     <title>Document</title>
 </head>
 <body>
-    <a href="../view/index.php" class="backtohome"> ← Go back to the pokedex</a>
+    <a href="../view/index_view.php" class="backtohome"> ← Go back to the pokedex</a>
     <main>
-        <h2>{{pokemon.name}}</h2>
-        <article>
-
-            <img src="../assets/images/pokeball.svg" alt="">
-            <div>
+        
+        <article>  
+          <h2>{{pokemon.name}}</h2>
+        
+        <div>
                 <ul>
                     <li>Generation : {{pokemon.generation}}</li>
-                    <li>{{pokemon.type1}}</li>
-                </ul>
-                <ul>
                     <li>{{pokemon.number}}</li>
+                    <li>{{pokemon.type1}}</li> 
                     <li>{{pokemon.type2}}</li>
                 </ul>
 
             </div>
+        <img src="./assets/images/pokeball.svg" alt="Pokemon picture">         
         </article>
         <aside>
             <h4>Stats</h4>
-            <div>
+            <div class="stats">
                 <p>PV : {{pokemon.pv}}</p>
                 <p>ATTACK : {{pokemon.attack}}</p>
                 <p>DEFENSE : {{pokemon.defense}}</p>
