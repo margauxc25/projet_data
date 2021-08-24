@@ -8,8 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-<p>4 <span><img src="../assets/images/pokeball.svg" alt=""></span>4</p>
-<button><a href="../vue/index.php">HOME</a></button>
+    <div><p>4 <span><img src="../assets/images/pokeball.svg" alt=""></span>4</p></div>
+
+<button><a href="../view/index.php">HOME</a></button>
 
 </body>
 </html>
+
