@@ -37,7 +37,7 @@ JOIN special_defense
 ON special_defense.id_pokemon = infos.id_pokemon
 JOIN speed
 ON speed.id_pokemon = infos.id_pokemon
-WHERE infos.id_pokemon = 1");
+WHERE infos.id_pokemon = 151");
             $stmt->execute();
             $result_infos = $stmt->fetchAll(PDO::FETCH_NUM);
           } catch (Exception $ex) { echo $ex->getmessage(); }
@@ -47,4 +47,8 @@ WHERE infos.id_pokemon = 1");
         $array2 = $result_infos[1][3];
         array_push($array1, $array2);
     }
+else {
+    print_r($result_infos);
+}
+
     print_r($array1);

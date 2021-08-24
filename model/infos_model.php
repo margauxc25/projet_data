@@ -33,12 +33,16 @@ $result_infos = $infos_pokemon->fetchAll();
 
 // print_r($infos);
 if (count($result_infos) == 2){
-        $array1 = $result_infos[0];
-        $array2 = $result_infos[1][3];
-        array_push($array1, $array2);
-    }
-
-return $array1 ;
+    $array1 = $result_infos[0];
+    $array2 = $result_infos[1][3];
+    array_push($array1, $array2);
+    return $array1;
+}
+else if (count($result_infos) == 1){
+    $array3 = $result_infos[0];
+    return $array3;
+}
+    
 
 }
 
