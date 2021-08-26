@@ -1,31 +1,63 @@
-body{
+/* Legals mention page style */
+
+/* Font import */
+@font-face {
+    font-family: nirmala ;
+    src: url(../font/Nirmala.ttf);
+}
+
+body {
     display: flex;
     flex-direction: column;
     height: 100vh;
     justify-content: space-between;
+    font-family: nirmala;
 }
-h2{
+
+.backtohome{
+    margin-left: 2rem;
+}
+
+.backtohome:hover{
+    color: yellow;
+}
+
+h2 {
     font-size: 3rem;
     margin: 1rem 0;
 }
 
-h3{
+h3 {
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
-main{
+main {
 margin-left: 5%;
-
-
 }
 
-main p{
-    color: #000;
+main p {
+    color: #0E1320;
     font-size: 1.5rem;
 }
 
-main div{
+main div {
     margin: 3rem 1rem;
 
+}
+
+input {
+    display: none;
+}
+
+.backtohome {
+    color: #0E1320;
+}
+
+.onlinewebsite {
+    color: #0E1320 ;
+}
+
+.onlinewebsite:hover {
+    color: yellow;
 }

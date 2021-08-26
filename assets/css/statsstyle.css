@@ -1,100 +1,101 @@
-body{
+/* Infos page style */
+
+/* Font import */
+@font-face {
+    font-family: nirmala ;
+    src: url(../font/Nirmala.ttf);
+}
+
+body {
     display: flex;
     flex-direction: column;
     height: 100vh;
     justify-content: space-between;
+    font-family: nirmala;
 }
 
-h2{
+h2 {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 1rem;
 }
 
-article div{
+article {
     display: flex;
-    justify-content: space-between;
-    height: 20vh;
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-li{
+article ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+article li {
     list-style: none;
     font-size: 1.5rem;
     margin: 0.5rem;
     padding: 0.5rem 1rem ;
-    background-color: black;
+    background-color: #0E1320;
     color: white;
     border-radius: 10px;
+    text-align: center;
 }
 
-article img{
-    height: 8rem;
-}
-aside{
+aside {
     height: 40vh;
 }
 
-aside p{
-    color: black;
-    font-size: 1.5rem;
+aside p {
+    color: #0E1320;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
+    margin-left: 1rem;
 }
 
-.backtohome{
-    margin: 1.5rem 0;
-    color: black;
+.backtohome {
+    margin:  -10rem 1.5rem;
+    color: #0E1320;
 }
 
-h4{
+.backtohome:hover{
+    color: yellow;
+}
+
+h4 {
     font-size: 1.8rem;
     text-align: center;
     margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
 
-    h2{
+    h2 {
         font-size: 3rem;
         text-align: start;
-        margin-left: 6rem;
     }
 
-    main{
+    main {
         display: flex;
-        justify-content: space-between;
-    }
-    
-    article div{
-        display: flex;
-        flex-direction: row-reverse;
         justify-content: center;
-        height: 20vh;
-    
-    }
-    
-    ul{
-    display: flex;
-    flex-direction: column;
+        align-items: center;
     }
 
-    .backtohome{
-        margin:0;
-        color: black;
+    .backtohome {
+        margin-left:1rem;
+        color: #0E1320;
+    }
+
+    article img {
+        height: 15rem;
     }
 
     article{
-        margin-left: 25rem;
-        display: flex;
-        flex-direction: column-reverse;
+        margin-right: 5%;
     }
 
     aside{
-        margin-right: 45rem;
-    }
-
-    article img{
-        height: 15rem;
-        margin-top: 2rem;
+        margin-left: 5%;
     }
 }

@@ -1,37 +1,30 @@
-*{
+/* Footer page style */
+
+/* Font import */
+@font-face {
+    font-family: nirmala ;
+    src: url(../font/Nirmala.ttf);
+}
+
+* {
     margin: 0;
     padding: 0;
 }
 
-footer{
+footer {
     height: 9vh;
     background-color: #0E1320;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    font-family: nirmala;
 }
 
-p{
-    color: white;
-    margin-left: 1rem;
-}
-
-a{
+a {
     color: white;
     text-decoration: none;
 }
 
-img{
-    margin-right: 1rem;
-}
-
-@media screen and (min-width: 768px){
-    p{
-        margin-left: 5rem;
-    }
-
-    img{
-        margin-right: 5rem;
-    }
-
+.copyright {
+    color: white;
 }

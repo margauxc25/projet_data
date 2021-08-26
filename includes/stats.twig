@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/image/favicon.png" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <a href="/projet_data" class="backtohome"> ← Go back to the pokedex</a>
+
+    <main>
+
+        <article>
+            <h2>{{pokemon.name}}</h2>
+            
+            <div>
+                <ul>
+                    <li>Gen {{pokemon.generation}}</li>
+                    <li>#{{pokemon.id_pokemon}}</li>
+                    <li>{{pokemon.type}}</li>
+                    <li>{{pokemon[12]}}</li>
+                </ul>
+
+            </div>
+
+            <img src="{{pokemon.url}}" alt="pokemon picture">
+
+        </article>
+
+        <aside>
+
+            <h4>Stats</h4>
+
+            <div class="stats">
+                <p>PV : {{pokemon.hp}}</p>
+                <p>ATTACK : {{pokemon.attack}}</p>
+                <p>DEFENSE : {{pokemon.defense}}</p>
+                <p>SP.ATK : {{pokemon.special_attack}}</p>
+                <p>SP.DEF : {{pokemon.special_defense}}</p>
+                <p>SPEED : {{pokemon.speed}}</p>
+            </div>
+
+            <p>Total : {{pokemon.total}}</p>
+
+        </aside>
+
+    </main>
+    
+</body>
+</html>

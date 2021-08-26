@@ -1,3 +1,46 @@
-p{
-    font-size: 15rem;
+/* Error 404 page style */
+
+/* Font import */
+@font-face {
+    font-family: nirmala ;
+    src: url(../font/Nirmala.ttf);
+}
+
+body {
+    font-family: nirmala;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    font-size: 10rem;
+    color: #0E1320;  
+}
+
+img {
+    height: 10rem;
+    padding-right: 2rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Button to go back to the index_view */
+button {
+    background-color: #0E1320;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+    p {
+        font-size: 8rem;
+    }
 }
